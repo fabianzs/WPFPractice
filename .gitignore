@@ -1,0 +1,36 @@
+# Exclude all these where-ever they are (no slash in pattern).
+*.suo
+*.user
+[Bb]in
+[Dd]ebug
+[Rr]elease
+obj
+Output
+*.v2.ncrunchproject
+*.v2.ncrunchsolution
+diff.txt
+
+Build/build/*.aps
+Build/build/*.eto
+
+/_ReSharper.*
+packages/*
+_NCrunch_skyeEditor/*
+.nuget/NuGet.exe
+
+# Cake Packages Directory
+artifacts/*
+dotCover/*
+tools/*
+!tools/packages.config
+!tools/dropbox-upload.ps1
+
+#Ignore files created by Rider IDE
+.idea/
+*.iml
+
+#Ignore files created by Visual Studio 2017
+.vs/
+NDependOut/
+.vscode/
+*.pubxml
