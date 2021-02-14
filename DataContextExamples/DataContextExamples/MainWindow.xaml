@@ -1,0 +1,75 @@
+﻿<Window x:Class="DataContextExamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+  <StackPanel Orientation="Horizontal"
+              Background="AntiqueWhite"
+              TextElement.FontSize="20">
+    <StackPanel Name="Tank1StackPanel"
+                Orientation="Vertical"
+                Margin="20"
+                Background="DarkCyan">
+      <Label FontSize="40">Tank Data</Label>
+      <StackPanel Orientation="Horizontal">
+        <StackPanel>
+          <TextBlock Margin="20"
+                     Text="{Binding Name}" />
+          <TextBlock Margin="20"
+                     Text="{Binding DataValue}" />
+        </StackPanel>
+        <StackPanel>
+          <ProgressBar Margin="20,10"
+                       Height="100"
+                       Width="30"
+                       Orientation="Vertical"
+                       Minimum="{Binding Minimum }"
+                       Maximum="{Binding Maximum}"
+                       Value="{Binding DataValue}"
+                       Foreground="Blue" />
+        </StackPanel>
+      </StackPanel>
+    </StackPanel>
+    <StackPanel Name="Tank2StackPanel"
+                Orientation="Vertical"
+                Margin="20"
+                Background="CornflowerBlue">
+      <Label FontSize="40">Tank Data</Label>
+      <StackPanel Orientation="Horizontal">
+        <StackPanel>
+          <TextBlock Margin="20"
+                     Text="{Binding Name}" />
+          <TextBlock Margin="20"
+                     Text="{Binding DataValue}" />
+        </StackPanel>
+        <StackPanel>
+          <ProgressBar Margin="20,10"
+                       Height="100"
+                       Width="30"
+                       Orientation="Vertical"
+                       Minimum="{Binding Minimum }"
+                       Maximum="{Binding Maximum}"
+                       Value="{Binding DataValue}"
+                       Foreground="Aqua" />
+        </StackPanel>
+      </StackPanel>
+    </StackPanel>
+    <StackPanel Name="EnviroStackPanel"
+                Margin="20"
+                Background="DarkKhaki">
+      <Label FontSize="40">Environment Data</Label>
+      <StackPanel Name="TempPanel"
+                  DataContext="{Binding EnviroData}"
+                  Margin="20">
+        <Label>Temperature</Label>
+        <TextBlock Text="{Binding Temperature}"
+                   FontSize="40" />
+        <Label>Humidity</Label>
+        <TextBlock Text="{Binding Humidity}"
+                   FontSize="40" />
+      </StackPanel>
+    </StackPanel>
+  </StackPanel>
+</Window>
